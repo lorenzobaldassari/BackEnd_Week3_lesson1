@@ -1,0 +1,20 @@
+EX1
+SELECT * FROM clienti WHERE nome='Mario'
+
+EX2
+SELECT *  FROM clienti WHERE anno_di_nascita=1882
+
+EX3
+SELECT *  FROM fatture WHERE iva='20%'
+
+EX4
+SELECT * FROM prodotti WHERE data_attivazione = '2022-05-25' AND (in_commercio=true OR in_produzione=true)
+
+EX5
+SELECT * FROM fatture INNER JOIN clienti ON fatture.id_cliente = clienti.numero_cliente WHERE fatture.importo<1000
+
+EX6
+SELECT numero_fattura,importo,iva,data_fattura,denominazione FROM fatture INNER JOIN fornitori ON fatture.numero_fornitore = fornitori.numero_fornitore 
+
+EX8
+SELECT count(*), sum(fatture.importo) FROM fatture GROUP BY data_fattura 
